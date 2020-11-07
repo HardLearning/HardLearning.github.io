@@ -24,29 +24,33 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"8.0.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="MooreWyh的博客">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="Code1234567891011121314151617181920212223242526func Min(a, b int) int &amp;#123;	if a &lt; b &amp;#123;		return a	&amp;#125;	return b&amp;#125;func maxArea(height []int) int &amp;#123;	if height &#x3D;&#x3D; nil || len(h">
+<meta property="og:type" content="article">
+<meta property="og:title" content="container_with_most_water">
+<meta property="og:url" content="http://example.com/2020/11/07/container-with-most-water/index.html">
 <meta property="og:site_name" content="MooreWyh的博客">
+<meta property="og:description" content="Code1234567891011121314151617181920212223242526func Min(a, b int) int &amp;#123;	if a &lt; b &amp;#123;		return a	&amp;#125;	return b&amp;#125;func maxArea(height []int) int &amp;#123;	if height &#x3D;&#x3D; nil || len(h">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-11-07T09:26:01.000Z">
+<meta property="article:modified_time" content="2020-11-07T09:35:04.993Z">
 <meta property="article:author" content="MooreWyh">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2020/11/07/container-with-most-water/">
 
 
 <script class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>MooreWyh的博客</title>
+  <title>container_with_most_water | MooreWyh的博客</title>
   
 
 
@@ -172,7 +176,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -185,6 +189,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <section class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Code"><span class="nav-number">1.</span> <span class="nav-text">Code</span></a></li></ol></div>
         </section>
         <!--/noindex-->
 
@@ -231,11 +236,12 @@
 </noscript>
 
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
       
 
       
-    
+
+  
 
 
 <div class="post-block">
@@ -255,10 +261,9 @@
       <meta itemprop="name" content="MooreWyh的博客">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/11/07/container-with-most-water/" class="post-title-link" itemprop="url">container_with_most_water</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          container_with_most_water
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -291,9 +296,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">func Min(a, b int) int &#123;</span><br><span class="line">	if a &lt; b &#123;</span><br><span class="line">		return a</span><br><span class="line">	&#125;</span><br><span class="line">	return b</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func maxArea(height []int) int &#123;</span><br><span class="line">	if height &#x3D;&#x3D; nil || len(height) &lt; 2 &#123;</span><br><span class="line">		return 0</span><br><span class="line">	&#125;</span><br><span class="line">	var left, right &#x3D; 0, len(height) -1</span><br><span class="line">	answer :&#x3D; (right - left) * Min(height[left], height[right])</span><br><span class="line">	for left &lt; right &#123;</span><br><span class="line">		var tmpAns &#x3D; (right - left) * Min(height[left], height[right])</span><br><span class="line">		if tmpAns &gt; answer &#123;</span><br><span class="line">			answer &#x3D; tmpAns</span><br><span class="line">		&#125;</span><br><span class="line">		if height[right] &lt; height[left] &#123;</span><br><span class="line">			right--</span><br><span class="line">		&#125; else &#123;</span><br><span class="line">			left++</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return answer</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">func Min(a, b int) int &#123;</span><br><span class="line">	if a &lt; b &#123;</span><br><span class="line">		return a</span><br><span class="line">	&#125;</span><br><span class="line">	return b</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func maxArea(height []int) int &#123;</span><br><span class="line">	if height &#x3D;&#x3D; nil || len(height) &lt; 2 &#123;</span><br><span class="line">		return 0</span><br><span class="line">	&#125;</span><br><span class="line">	var left, right &#x3D; 0, len(height) -1</span><br><span class="line">	answer :&#x3D; (right - left) * Min(height[left], height[right])</span><br><span class="line">	for left &lt; right &#123;</span><br><span class="line">		var tmpAns &#x3D; (right - left) * Min(height[left], height[right])</span><br><span class="line">		if tmpAns &gt; answer &#123;</span><br><span class="line">			answer &#x3D; tmpAns</span><br><span class="line">		&#125;</span><br><span class="line">		if height[right] &lt; height[left] &#123;</span><br><span class="line">			right--</span><br><span class="line">		&#125; else &#123;</span><br><span class="line">			left++</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return answer</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-      
     </div>
 
     
@@ -301,17 +305,15 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+
+        
+
     </footer>
   </article>
 </div>
 
 
 
-
-
-  
 
 
 
